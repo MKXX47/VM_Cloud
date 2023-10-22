@@ -1,0 +1,108 @@
+{
+  "type": "bundle",
+  "id": "bundle--69b991a5-7034-42b5-a12d-09f90c1a1695",
+  "spec_version": "2.1",
+  "created": "2023-10-22T11:25:03.070Z",
+  "modified": "2023-10-22T11:25:03.070Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--bee01c6c-5b7c-4b78-99f2-0f6ca3ceeb7f",
+      "spec_version": "2.1",
+      "created": "2023-10-18T14:23:19.954Z",
+      "modified": "2023-10-22T11:25:03.070Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--3e884cdb-8970-4e3c-bea1-6c1e6d9a3552",
+      "start_refs": [
+        "attack-action--f2551091-96f4-4465-8826-8aa393514721"
+      ],
+      "name": "MittreAttackSchema",
+      "scope": "other"
+    },
+    {
+      "type": "identity",
+      "id": "identity--3e884cdb-8970-4e3c-bea1-6c1e6d9a3552",
+      "spec_version": "2.1",
+      "created": "2023-10-22T11:25:03.070Z",
+      "modified": "2023-10-22T11:25:03.070Z",
+      "name": "Mehdi",
+      "identity_class": "individual"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f2551091-96f4-4465-8826-8aa393514721",
+      "spec_version": "2.1",
+      "created": "2023-10-22T11:25:03.070Z",
+      "modified": "2023-10-22T11:25:03.070Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Initial Access",
+      "tactic_id": "T1190",
+      "description": "L'attaquant a commencé par scanner la machine cible pour vérifier si le port 3389 (RDP) était ouvert.",
+      "confidence": 70,
+      "effect_refs": [
+        "attack-action--811bc155-d065-4e96-9675-bca2d286d7b9"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--811bc155-d065-4e96-9675-bca2d286d7b9",
+      "spec_version": "2.1",
+      "created": "2023-10-22T11:25:03.070Z",
+      "modified": "2023-10-22T11:25:03.070Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Credential Access",
+      "tactic_id": "T1110",
+      "description": "Après avoir identifié le port 3389 ouvert, l'attaquant a utilisé l'outil Hydra sur une machine sous Kali Linux pour mener une attaque de force brute sur le mot de passe de la machine cible.\nOutil : Hydra\nDictionnaire : rockyou.txt",
+      "confidence": 70
+    }
+  ]
+}
