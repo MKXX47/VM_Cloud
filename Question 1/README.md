@@ -1,4 +1,4 @@
-# Azure Windows VM cluster
+# Azure Windows VM
 
 This template deploys a Windows VM cluster on Azure.
 
